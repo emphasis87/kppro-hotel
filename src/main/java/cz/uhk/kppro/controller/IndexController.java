@@ -23,5 +23,4 @@ public class IndexController {
     public String admin(){
         return "<h1 style=\"color: green;\">Admin Section</h1>";
     }
-
 }
