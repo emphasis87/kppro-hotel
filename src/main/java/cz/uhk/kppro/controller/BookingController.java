@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  * Presents the booking interface to the customers
  */
@@ -32,4 +34,10 @@ public class BookingController {
         this.roomService = roomService;
     }
 
+    @GetMapping({"/booking"})
+    public String booking(Model model){
+        List<Room> rooms = roomService.getAvailableRooms();
+        model.addAttribute("rooms", rooms);
+        return "reservation";
+    }
 }

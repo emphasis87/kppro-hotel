@@ -15,11 +15,7 @@ public class Room {
     @NotBlank
     private String name;
 
-    @Min(1)
-    private int capacity;
-
-    @Min(0)
-    private double price;
+    private int floor;
 
     public String getName(){
         return name;
@@ -29,19 +25,11 @@ public class Room {
         this.name = name;
     }
 
-    public int getCapacity(){
-        return capacity;
+    public int getFloor(){
+        return floor;
     }
 
-    public void setCapacity(int capacity){
-        this.capacity = capacity;
-    }
-
-    public double getPrice(){
-        return price;
-    }
-
-    public void setPrice(double price){
-        this.price = price;
+    public void setFloor(int floor){
+        this.floor = floor;
     }
 }

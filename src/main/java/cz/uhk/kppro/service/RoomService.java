@@ -10,4 +10,6 @@ public interface RoomService {
             String name,
             int capacity,
             double price);
+
+    List<Room> getAvailableRooms();
 }
