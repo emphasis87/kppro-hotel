@@ -18,6 +18,9 @@ public class Room {
     @Min(1)
     private int capacity;
 
+    @Min(0)
+    private double price;
+
     public String getName(){
         return name;
     }
@@ -32,5 +35,13 @@ public class Room {
 
     public void setCapacity(int capacity){
         this.capacity = capacity;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
     }
 }

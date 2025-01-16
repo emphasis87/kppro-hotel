@@ -11,6 +11,7 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private Room room;
     private Customer customer;
 
     private Date arrival;
@@ -20,6 +21,14 @@ public class Booking {
 
     public long getId() {
         return id;
+    }
+
+    public Room getRoom(){
+        return room;
+    }
+
+    public void setRoom(Room room){
+        this.room = room;
     }
 
     public Customer getCustomer(){

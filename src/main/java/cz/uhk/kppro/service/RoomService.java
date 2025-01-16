@@ -6,5 +6,8 @@ import java.util.List;
 
 @Service
 public interface RoomService {
-
+    Room createRoom(
+            String name,
+            int capacity,
+            double price);
 }
