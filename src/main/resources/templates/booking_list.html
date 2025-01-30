@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available rooms</title>
+</head>
+<body>
+
+<h1>Available rooms</h1>
+
+<form th:action="@{/booking/list}" method="get">
+    <input type="date" name="arrival" th:value="${arrival}" />
+    <input type="date" name="departure" th:value="${departure}" />
+    <button type="submit">Show</button>
+</form>
+
+<div th:each="rt: ${roomTypes}">
+    <form th:action="@{/booking/reservation(id=1,arrival=${arrival},departure=${departure})}" method="post" style="border: 1px black solid; margin: 10px;">
+        <div>Počet lůžek: <span th:text="${rt.capacity}"></span></div>
+        <div>Velikost: <span th:text="${rt.size}"></span>m2</div>
+        <div>Cena: <span th:text="${rt.price}"></span></div>
+        <button type="submit">Reserve</button>
+    </form>
+</div>
+
+</body>
+</html>

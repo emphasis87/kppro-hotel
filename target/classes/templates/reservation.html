@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<h1>Available rooms</h1>
+<h1>Rezervace pokoje</h1>
 
-<div th:each="room: ${rooms}">
+<div>
     <div><span th:text="${room.name}"></span></div>
-    <div><span th:text="${room.capacity}"></span></div>
-    <div><span th:text="${room.price}"></span></div>
+    <div><span th:text="${room.roomType.capacity}"></span></div>
+    <div><span th:text="${room.roomType.price}"></span></div>
 </div>
 
 </body>
