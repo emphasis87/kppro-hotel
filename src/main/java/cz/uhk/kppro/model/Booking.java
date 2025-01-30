@@ -12,9 +12,12 @@ public class Booking implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="room_id")
+    @ManyToOne
+    @JoinColumn(name = "room_id", nullable = false)
     private Room room;
-    @Column(name="customer_id")
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     private Date arrival;

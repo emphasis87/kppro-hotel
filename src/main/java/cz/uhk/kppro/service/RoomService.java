@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-@Service
 public interface RoomService {
     Room createRoom(
             String name,
@@ -16,4 +15,6 @@ public interface RoomService {
     List<Room> getAvailableRooms(
             Date arrival,
             Date departure);
+
+    Room addRoom(RoomType roomType, String name, int floor) throws Exception;
 }

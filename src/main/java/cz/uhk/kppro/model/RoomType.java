@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "room_types")
@@ -20,6 +21,9 @@ public class RoomType implements Serializable {
 
     @Min(0)
     private double price;
+
+    @OneToMany(mappedBy = "roomType", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Room> rooms;
 
     public int getCapacity(){
         return capacity;

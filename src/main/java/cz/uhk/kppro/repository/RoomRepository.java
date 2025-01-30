@@ -16,4 +16,6 @@ public interface RoomRepository extends JpaRepository<Room, Long> {
             @Param("departure") Date departure,
             int page,
             int page_size);
+
+    Room findByName(String name);
 }

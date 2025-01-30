@@ -19,7 +19,8 @@ public class Room implements Serializable {
 
     private int floor;
 
-    @Column(name = "room_type_id")
+    @ManyToOne
+    @JoinColumn(name = "room_type_id", nullable = false)
     private RoomType roomType;
 
     public String getName(){
@@ -36,5 +37,13 @@ public class Room implements Serializable {
 
     public void setFloor(int floor){
         this.floor = floor;
+    }
+
+    public RoomType getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
     }
 }

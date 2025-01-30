@@ -40,4 +40,17 @@ public class RoomServiceImpl implements RoomService {
             @Param("departure") Date departure) {
         return new ArrayList<Room>();
     }
+
+    @Override
+    public Room addRoom(RoomType roomType, String name, int floor) throws Exception {
+        if (roomRepository.findByName(name) != null)
+            throw new Exception("Room already exists");
+
+        Room room = new Room();
+        room.setRoomType(roomType);
+        room.setName(name);
+        room.setFloor(floor);
+        roomRepository.save(room);
+        return  room;
+    }
 }
