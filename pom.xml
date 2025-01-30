@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cz.uhk</groupId>
-    <artifactId>kppro</artifactId>
+    <artifactId>kppro-hotel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kppro-hotel</name>
-    <description>Hotel</description>
+    <name>KPPRO Hotel</name>
+    <description>Hotel reservation system</description>
     <url/>
     <licenses>
         <license/>
@@ -65,6 +65,20 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- NHibernate (via Hibernate ORM) -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.5.2.Final</version>
+        </dependency>
+
+        <!-- Flyway for SQL Migration -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -81,12 +95,14 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        </pluginManagement>
     </build>
 
 </project>

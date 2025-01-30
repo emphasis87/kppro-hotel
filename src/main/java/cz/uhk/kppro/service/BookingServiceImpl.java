@@ -5,10 +5,12 @@ import cz.uhk.kppro.model.Customer;
 import cz.uhk.kppro.model.Room;
 import cz.uhk.kppro.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class BookingServiceImpl implements BookingService {
 
     private BookingRepository bookingRepository;

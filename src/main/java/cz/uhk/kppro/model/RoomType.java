@@ -1,13 +1,13 @@
 package cz.uhk.kppro.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 
+import java.io.Serializable;
+
+@Entity
 @Table(name = "room_types")
-public class RoomType {
+public class RoomType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -15,7 +15,7 @@ public class RoomType {
     @Min(1)
     private int capacity;
 
-    @Min(1)
+    @Min(0)
     private int size;
 
     @Min(0)

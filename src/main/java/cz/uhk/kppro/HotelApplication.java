@@ -1,6 +1,5 @@
 package cz.uhk.kppro;
 
-import cz.uhk.kppro.model.Booking;
 import cz.uhk.kppro.model.Customer;
 import cz.uhk.kppro.model.Room;
 import cz.uhk.kppro.model.User;
@@ -15,14 +14,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.Date;
 
 @SpringBootApplication
-public class KpproApplication {
+public class HotelApplication {
 
     private UserService userService;
 
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public KpproApplication(UserService userService, PasswordEncoder passwordEncoder){
+    public HotelApplication(UserService userService, PasswordEncoder passwordEncoder){
         this.userService =userService;
         this.passwordEncoder = passwordEncoder;
     }
@@ -58,7 +57,7 @@ public class KpproApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(KpproApplication.class, args);
+        SpringApplication.run(HotelApplication.class, args);
     }
 
 }

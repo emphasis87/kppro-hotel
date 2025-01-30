@@ -1,12 +1,14 @@
 package cz.uhk.kppro.service;
 
 import cz.uhk.kppro.model.Room;
+import cz.uhk.kppro.model.RoomType;
 import cz.uhk.kppro.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,11 +23,10 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public Room createRoom(String name, int capacity, double price) {
+    public Room createRoom(String name, RoomType roomType) {
         Room room = new Room();
         room.setName(name);
-        room.setCapacity(capacity);
-        room.setPrice(price);
+        //room.setRoomType(type);
 
         roomRepository.save(room);
 
@@ -37,6 +38,6 @@ public class RoomServiceImpl implements RoomService {
     public List<Room> getAvailableRooms(
             @Param("arrival") Date arrival,
             @Param("departure") Date departure) {
-
+        return new ArrayList<Room>();
     }
 }

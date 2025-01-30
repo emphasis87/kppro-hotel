@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
-
+/*
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -49,7 +49,7 @@ public class SecurityConfig {
                         .loginPage("/login") // Custom login page
                         .loginProcessingUrl("/login") // Form submission URL
                         .defaultSuccessUrl("/", true)
-                        .permitAll())*/
+                        .permitAll())*//*
                 .logout(logout -> logout
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/login?logout")
@@ -68,3 +68,4 @@ public class SecurityConfig {
         };
     }
 }
+*/

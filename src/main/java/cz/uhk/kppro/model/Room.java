@@ -5,9 +5,11 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "rooms")
-public class Room {
+public class Room implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -16,6 +18,9 @@ public class Room {
     private String name;
 
     private int floor;
+
+    @Column(name = "room_type_id")
+    private RoomType roomType;
 
     public String getName(){
         return name;

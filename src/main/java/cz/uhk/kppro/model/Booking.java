@@ -2,16 +2,19 @@ package cz.uhk.kppro.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "users")
-public class Booking {
+@Table(name = "bookings")
+public class Booking implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name="room_id")
     private Room room;
+    @Column(name="customer_id")
     private Customer customer;
 
     private Date arrival;

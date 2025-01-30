@@ -36,8 +36,8 @@ public class BookingController {
 
     @GetMapping({"/booking"})
     public String booking(Model model){
-        List<Room> rooms = roomService.getAvailableRooms();
-        model.addAttribute("rooms", rooms);
+        //List<Room> rooms = roomService.getAvailableRooms();
+        //model.addAttribute("rooms", rooms);
         return "reservation";
     }
 }
